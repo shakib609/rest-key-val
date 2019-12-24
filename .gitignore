@@ -1,0 +1,15 @@
+ggUserService/db.sqlite3
+.env.local
+.env
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+.coverage
+*,cover
+htmlcov
+redis/sentinel?.conf
+venv/
+.idea/
+.vscode/
+db.sqlite3
+
