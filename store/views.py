@@ -4,6 +4,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.cache import cache, caches
 
+# Default Timeout of 5 minutes
 DEFAULT_TIMEOUT = 5 * 60
 
 
@@ -29,4 +30,7 @@ class ValuesAPIView(views.APIView):
         patch_data = request.data
         cache.set_many(patch_data)
         keys = [key for key in request.data]
+        # Reset TTL
+        for key in keys:
+            cache.touch(key, DEFAULT_TIMEOUT)
         return Response(cache.get_many(keys), status=status.HTTP_200_OK)
