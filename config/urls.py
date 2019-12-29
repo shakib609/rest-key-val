@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from store.views import ValuesAPIView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('values/', ValuesAPIView.as_view()),
 ]
