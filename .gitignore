@@ -1,4 +1,3 @@
-ggUserService/db.sqlite3
 .env.local
 .env
 # Byte-compiled / optimized / DLL files
@@ -12,5 +11,4 @@ venv/
 .idea/
 .vscode/
 db.sqlite3
-
 .python-version
