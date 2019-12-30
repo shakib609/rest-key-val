@@ -27,6 +27,7 @@ class ValuesAPIView(views.APIView):
         return Response(cache.get_many(request.data.keys()), status=status.HTTP_201_CREATED)
 
     def patch(self, request):
+        # Similar implementation to post for fault-tolerance
         # Reset TTL
         cache.set_many(request.data, DEFAULT_TIMEOUT)
         return Response(cache.get_many(request.data.keys()), status=status.HTTP_200_OK)
